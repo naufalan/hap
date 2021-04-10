@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/sview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/cview"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_pad_side"
+                android:layout_marginTop="@dimen/default_pad_top"
+                android:layout_marginRight="@dimen/default_pad_side">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_logo_signup"
+                    android:layout_width="@dimen/icon_login_signup"
+                    android:layout_height="@dimen/icon_login_signup"
+                    android:layout_marginTop="@dimen/margin_5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_icon_purple" />
+
+                <TextView
+                    android:id="@+id/tv_title_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:lineSpacingExtra="8sp"
+                    android:text="@string/ayo_gabung"
+                    android:textColor="@color/colorBlack80"
+                    android:textSize="@dimen/text_24"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_logo_signup" />
+
+                <TextView
+                    android:id="@+id/tv_subtitle_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8sp"
+                    android:text="@string/di_ceria"
+                    android:textColor="@color/colorBlack80"
+                    android:textSize="@dimen/text_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_signup" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ti_phone_number_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_32"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_subtitle_signup">
+
+                    <EditText
+                        android:id="@+id/et_phone_number_signup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_marginRight="-4dp"
+                        android:background="@color/white"
+                        android:drawableStart="@drawable/ic_hp"
+                        android:hint="@string/phone_number"
+                        android:inputType="phone"
+                        android:maxLength="@integer/max_length_phone_number"
+                        android:paddingBottom="@dimen/margin_8" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_have_an_account_signup"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:alpha="0.5"
+                    android:text="@string/sudah_punya_akun"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ti_phone_number_signup" />
+
+                <TextView
+                    android:id="@+id/btn_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:onClick="@{clickListener}"
+                    android:text="@string/login_uppercase"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_have_an_account_signup" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_12"
+            android:background="@drawable/bg_stroke"
+            android:padding="@dimen/margin_8"
+            app:layout_constraintBottom_toTopOf="@id/cb_tnc_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sview">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_ojk"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_ojk"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_ojk" />
+
+            <TextView
+                android:id="@+id/tv_ojk"
+                style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/iv_ojk"
+                android:alpha="0.5"
+                android:lineSpacingMultiplier="@dimen/linespacing_small"
+                android:paddingLeft="@dimen/margin_5"
+                android:paddingRight="@dimen/margin_5"
+                android:text="@string/authorized_by_ojk"
+                android:textColor="@color/colorBlack80"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_ojk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_ojk" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        <androidx.appcompat.widget.AppCompatSpinner-->
+        <!--            android:id="@+id/spinner"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@drawable/bg_spinner"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/cb_tnc_signup"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+        <CheckBox
+            android:id="@+id/cb_tnc_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickListener}"
+            android:textColor="@color/colorTextLightPrimary"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup"
+            app:layout_constraintEnd_toEndOf="@id/gl_signup" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <TextView
+            android:id="@+id/tv_tnc_signup"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:lineSpacingExtra="4sp"
+            android:text="@string/agree_checked"
+            android:textColor="@color/colorBlack80"
+            app:layout_constraintBottom_toBottomOf="@id/cb_tnc_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="@id/gl_signup"
+            app:layout_constraintTop_toTopOf="@id/cb_tnc_signup" />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rbk_btn_full"
+            android:background="@drawable/selector_btn_primary_full"
+            android:enabled="false"
+            android:onClick="@{clickListener}"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/rbk_btn_txt_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_ceria">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_input_pin"
+            android:layout_width="@dimen/splash_icon_size_small"
+            android:layout_height="@dimen/splash_icon_size"
+            android:layout_margin="@dimen/margin_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_icon_white" />
+
+        <TextView
+            android:id="@+id/tv_title_input_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_pin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_input_pin" />
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/et_input_pin"
+            android:layout_width="220dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="0dp"
+            android:background="@null"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:digits="1234567890"
+            android:focusable="false"
+            android:inputType="number|numberPassword"
+            android:maxLength="6"
+            android:paddingBottom="1dp"
+            android:textColor="@android:color/transparent"
+            android:textIsSelectable="false"
+            android:textSize="0px"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_input_pin"
+            app:pinBackgroundDrawable="@drawable/selector_pin_round"
+            app:pinBackgroundIsSquare="true"
+            app:pinCharacterSpacing="20dp"
+            app:pinLineColors="@color/colorBackgroundInfoTint" />
+
+        <TextView
+            android:id="@+id/tv_forgot_input_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_32"
+            android:clickable="true"
+            android:onClick="@{clickListener}"
+            android:text="@string/forgot_pin"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_input_pin" />
+
+        <TextView
+            android:id="@+id/tv_signup_input_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:onClick="@{clickListener}"
+            android:text="@string/dont_have_an_account"
+            android:textColor="@color/colorWhiteTint"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_forgot_input_pin" />
+
+        <include
+            layout="@layout/keyboard_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_signup_input_pin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

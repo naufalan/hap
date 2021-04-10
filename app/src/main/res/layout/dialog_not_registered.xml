@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_16">
+
+        <ImageView
+            android:id="@+id/iv_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_number_not_registered"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_close_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_16"
+            android:text="@string/ups_ada_masalah"
+            android:textColor="@color/black80"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_not_registered" />
+
+        <TextView
+            android:id="@+id/tv_desc_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/desc_not_registered"
+            android:textAlignment="center"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_not_registered" />
+
+        <TextView
+            android:id="@+id/tv_call_centre_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/call_centre_bri"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_14"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_not_registered" />
+
+        <ImageView
+            android:id="@+id/iv_call_centre_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="80dp"
+            android:src="@drawable/ic_call"
+            app:layout_constraintEnd_toEndOf="@id/guide_not_registered"
+            app:layout_constraintTop_toBottomOf="@id/tv_call_centre_not_registered" />
+
+        <TextView
+            android:id="@+id/tv_number_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@string/number_call_center"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintBottom_toBottomOf="@id/iv_call_centre_not_registered"
+            app:layout_constraintStart_toEndOf="@id/iv_call_centre_not_registered"
+            app:layout_constraintTop_toTopOf="@id/iv_call_centre_not_registered" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/btn_not_registered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/selector_btn_primary"
+            android:paddingHorizontal="18dp"
+            android:text="@string/tidak_kembali"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_call_centre_not_registered" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

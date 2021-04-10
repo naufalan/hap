@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scroll_finalize_third"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_finalize_third"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_finalize_third"
+                    style="@style/ThemeOverlay.AppCompat.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navigationIcon="@drawable/ic_back" />
+
+                <TextView
+                    android:id="@+id/tv_step_finalize_third"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:text="@string/_2_3"
+                    android:textColor="@color/black30"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_finalize_third" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_finalize_third"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:text="@string/pembuatan_digital_signature"
+                    android:textColor="@color/black80"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_step_finalize_third" />
+
+                <ImageView
+                    android:id="@+id/iv_information_finalize_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:onClick="@{clickListener}"
+                    android:src="@drawable/ic_information"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_title_finalize_third"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@id/tv_title_finalize_third" />
+
+                <TextView
+                    android:id="@+id/tv_desc_finalize_third"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:text="@string/desc_finalize_third"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_finalize_third" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_finalize_third"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:onClick="@{clickListener}"
+                    android:paddingVertical="@dimen/margin_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_finalize_third">
+
+                    <ImageView
+                        android:id="@+id/iv_main_finalize_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_camera"
+                        app:layout_constraintEnd_toEndOf="@id/guide_finalize_third"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_finalize_third"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@id/guide_finalize_third"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guide_finalize_third"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <ImageView
+                        android:id="@+id/iv_main_uploaded_finalize_third"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:background="@color/black"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_finalize_third"
+                        app:layout_constraintStart_toStartOf="@id/guide_finalize_third"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_finalize_third" />
+
+                    <TextView
+                        android:id="@+id/tv_main_uplaoded_finalize_third"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/foto_telah_sesuai"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_uploaded_finalize_third"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_uploaded_finalize_third"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_uploaded_finalize_third" />
+
+                    <TextView
+                        android:id="@+id/tv_title_main_finalize_third"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/ambil_foto_selfie_awal"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_finalize_third"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_finalize_third" />
+
+                    <TextView
+                        android:id="@+id/tv_desc_main_finalize_third"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/pastikan_dokumen_jelas_dan_tidak_rusak"
+                        android:textColor="@color/black50"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_finalize_third"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_main_finalize_third" />
+
+                    <TextView
+                        android:id="@+id/tv_change_finalize_third"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ubah_foto"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_finalize_third"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_finalize_third" />
+
+                    <TextView
+                        android:id="@+id/tv_percentage_finalize_third"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/percentage_10"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_finalize_third"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_finalize_third" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_finalize_third"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_finalize_third" />
+
+                <ImageView
+                    android:id="@+id/border_warning_finalize_third"
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_marginHorizontal="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:background="@drawable/bg_stroke"
+                    android:padding="@dimen/margin_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_finalize_third" />
+
+                <ImageView
+                    android:id="@+id/iv_warning_finalize_third"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:src="@drawable/ic_ribbon"
+                    app:layout_constraintBottom_toBottomOf="@id/border_warning_finalize_third"
+                    app:layout_constraintStart_toStartOf="@id/border_warning_finalize_third"
+                    app:layout_constraintTop_toTopOf="@id/border_warning_finalize_third" />
+
+                <TextView
+                    android:id="@+id/tv_warning_finalize_third"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_8"
+                    android:text="@string/warning_finalize_third"
+                    android:textColor="@color/black80"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_warning_finalize_third"
+                    app:layout_constraintEnd_toEndOf="@id/border_warning_finalize_third"
+                    app:layout_constraintStart_toEndOf="@id/iv_warning_finalize_third"
+                    app:layout_constraintTop_toTopOf="@id/iv_warning_finalize_third" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cb_finalize_third"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_20"
+                    android:enabled="true"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/selfie_agreement"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/border_warning_finalize_third" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_finalize_third"
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_btn_primary_full"
+            android:enabled="true"
+            android:onClick="@{clickListener}"
+            android:padding="@dimen/margin_12"
+            android:text="@string/lanjutkan"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

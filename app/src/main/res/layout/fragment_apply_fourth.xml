@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.apply.main_form.ApplyFourthFragment">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margin_20"
+            app:layout_constraintBottom_toTopOf="@id/btn_send_apply_fourth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_apply_fourth"
+                    style="@style/ThemeOverlay.AppCompat.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navigationIcon="@drawable/ic_back" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_apply_fourth"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:text="@string/title_apply_fourth"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_apply_fourth" />
+
+                <TextView
+                    android:id="@+id/tv_desc_apply_fourth"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:lineSpacingExtra="6sp"
+                    android:text="@string/desc_apply_fourth"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_apply_fourth" />
+
+                <ProgressBar
+                    android:id="@+id/progress_apply_fourth"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_12"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:max="100"
+                    android:maxHeight="7dp"
+                    android:minHeight="7dp"
+                    android:progress="20"
+                    android:progressDrawable="@drawable/progressbar_state"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_apply_fourth" />
+
+                <TextView
+                    android:id="@+id/tv_progress_apply_fourth"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:text="@string/_20_completed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/progress_apply_fourth" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_ktp_apply_fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:onClick="@{clickListener}"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_progress_apply_fourth">
+
+                    <ImageView
+                        android:id="@+id/iv_ktp_apply_fourth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_camera"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_ktp_taken_apply_fourth"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:background="@color/black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_ktp_apply_fourth"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_ktp_taken_apply_fourth"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/foto_telah_sesuai"
+                        android:textColor="@color/black50"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_ktp_taken_apply_fourth"
+                        app:layout_constraintStart_toEndOf="@id/iv_ktp_taken_apply_fourth"
+                        app:layout_constraintTop_toTopOf="@id/iv_ktp_taken_apply_fourth" />
+
+                    <TextView
+                        android:id="@+id/tv_ktp_apply_fourth"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_8"
+                        android:text="@string/foto_ktp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_apply_fourth_1"
+                        app:layout_constraintStart_toEndOf="@id/iv_ktp_apply_fourth"
+                        app:layout_constraintTop_toTopOf="@id/iv_ktp_apply_fourth" />
+
+                    <TextView
+                        android:id="@+id/tv_desc_ktp_apply_fourth"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/margin_8"
+                        android:text="@string/desc_foto_ktp"
+                        android:textColor="@color/black50"
+                        app:layout_constraintEnd_toStartOf="@id/iv_right_apply_fourth_1"
+                        app:layout_constraintStart_toEndOf="@id/iv_ktp_apply_fourth"
+                        app:layout_constraintTop_toBottomOf="@id/tv_ktp_apply_fourth" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_right_apply_fourth_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_right"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_ktp_apply_fourth"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_ktp_apply_fourth"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/tv_change_apply_fourth_1"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ubah_foto"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_ktp_apply_fourth"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_ktp_apply_fourth" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_apply_fourth_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_ktp_apply_fourth" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_personal_apply_fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_apply_fourth_1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_personal_click_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:onClick="@{clickListener}"
+                        android:padding="@dimen/margin_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_personal_apply_fourth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_profile"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_personal_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:text="@string/data_pribadi"
+                            android:textColor="@color/black30"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_personal_apply_fourth"
+                            app:layout_constraintStart_toEndOf="@id/iv_personal_apply_fourth"
+                            app:layout_constraintTop_toTopOf="@id/iv_personal_apply_fourth" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_right_apply_fourth_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_right"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_personal_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_personal_apply_fourth"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_change_apply_fourth_2"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ubah"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_personal_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_personal_apply_fourth" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_personal_data_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_personal_click_apply_fourth">
+
+                        <TextView
+                            android:id="@+id/tv_email_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/email"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_email_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_email"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_email_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_edu_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/pendidikan_terakhir"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_email_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_edu_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/s1"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_edu_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_status_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/status_perkawinan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_edu_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_status_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/s1"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_status_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_phone_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/telepon_rumah"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_status_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_phone_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_phone_number"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_phone_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_address_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/alamat_tempat_tinggal"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_phone_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_address_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_address"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_address_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_residency_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/status_tempat_tinggal"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_address_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_residency_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kontrak"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_residency_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_howlong_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/lama_menempati"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_residency_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_howlong_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/_1_tahun"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_howlong_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_card_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/kartu_kredit_yang_dimiliki"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_howlong_personal_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_card_personal_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bri"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_card_personal_data_apply_fourth" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_apply_fourth_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_personal_apply_fourth" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_family_apply_fourt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_apply_fourth_2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_family_click_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:onClick="@{clickListener}"
+                        android:padding="@dimen/margin_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_family_apply_fourth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_group"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_family_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:onClick="@{clickListener}"
+                            android:text="@string/data_kerabat"
+                            android:textColor="@color/black30"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_family_apply_fourth"
+                            app:layout_constraintStart_toEndOf="@id/iv_family_apply_fourth"
+                            app:layout_constraintTop_toTopOf="@id/iv_family_apply_fourth" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_right_apply_fourth_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_right"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_family_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_family_apply_fourth"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_change_apply_fourth_3"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ubah"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_family_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_family_apply_fourth" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_family_data_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_family_click_apply_fourth">
+
+                        <TextView
+                            android:id="@+id/tv_mother_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/nama_gadis_ibu_kandung"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_mother_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/suri_anzari"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_mother_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_dependency_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/jumlah_tanggungan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_mother_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_dependency_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/suri_anzari"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_dependency_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_name_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/nama_lengkap_kerabat"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_dependency_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_name_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/suri_anzari"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_name_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_relationship_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/hubungan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_name_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_relationship_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kakak"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_relationship_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_phone_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/nomor_telpon_yang_bisa_dihubungi"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_relationship_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_phone_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_phone_number"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_phone_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_address_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/alamat_kerabat"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_phone_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_address_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_address"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_address_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_postalcode_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/kode_pos"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_address_family_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_postalcode_family_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_postal_code"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_postalcode_family_data_apply_fourth" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_apply_fourth_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_family_apply_fourt" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_job_apply_fourth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_apply_fourth_3">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_job_click_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:onClick="@{clickListener}"
+                        android:padding="@dimen/margin_8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_job_apply_fourth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_job"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_job_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:onClick="@{clickListener}"
+                            android:text="@string/data_pekerjaan"
+                            android:textColor="@color/black30"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_job_apply_fourth"
+                            app:layout_constraintStart_toEndOf="@id/iv_job_apply_fourth"
+                            app:layout_constraintTop_toTopOf="@id/iv_job_apply_fourth" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_right_apply_fourth_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_right"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_job_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_job_apply_fourth"
+                            app:tint="@color/black30" />
+
+                        <TextView
+                            android:id="@+id/tv_change_apply_fourth_4"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ubah"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_job_apply_fourth"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/iv_job_apply_fourth" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_job_data_apply_fourth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_job_click_apply_fourth">
+
+                        <TextView
+                            android:id="@+id/tv_npwp_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/nomor_npwp"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_npwp_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_npwp"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_npwp_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_income_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/sumber_penghasilan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_npwp_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_income_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/gaji"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_income_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_net_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/net_income"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_income_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_net_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_amount_income"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_net_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_output_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/total_expenses"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_net_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_output_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_amount_income"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_output_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_type_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/jenis_pekerjaan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_output_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_type_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pegawai"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_type_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_company_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/perusahaan_tempat_bekerja"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_type_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_company_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_company"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_company_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_status_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/status_pekerjaan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_company_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_status_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/kontrak"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_status_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_start_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/mulai_bekerja"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_status_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_start_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_date"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_start_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_end_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:lineSpacingExtra="0sp"
+                            android:text="@string/mulai_bekerja"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_start_job_data_apply_fourth" />
+
+                        <TextView
+                            android:id="@+id/tv_end_start_job_data_apply_fourth"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_date"
+                            android:textColor="@color/black80"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_end_job_data_apply_fourth" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_apply_fourth_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_job_apply_fourth" />
+
+                <CheckBox
+                    android:id="@+id/cb_apply_fourth"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_20"
+                    android:enabled="false"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/apply_form_agreement"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_apply_fourth_4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btn_save_apply_fourth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@drawable/selector_rounded_btn_transparent"
+            android:onClick="@{clickListener}"
+            android:text="@string/berhenti_and_simpan"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guide_apply_fourth"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_apply_fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send_apply_fourth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@drawable/selector_btn_primary"
+            android:enabled="true"
+            android:onClick="@{clickListener}"
+            android:padding="@dimen/margin_12"
+            android:text="@string/kirim"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_apply_fourth" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

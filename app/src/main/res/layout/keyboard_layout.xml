@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark"
+        tools:background="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="@{clickListener}"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_2"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_2"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_3"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_3"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_4"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_1" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_5"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_6"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_4"
+            app:layout_constraintTop_toBottomOf="@id/tv_2" />
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_6"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_5"
+            app:layout_constraintTop_toBottomOf="@id/tv_3" />
+
+
+        <TextView
+            android:id="@+id/tv_7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_7"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_8"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_4" />
+
+        <TextView
+            android:id="@+id/tv_8"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_8"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_9"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_7"
+            app:layout_constraintTop_toBottomOf="@id/tv_5" />
+
+        <TextView
+            android:id="@+id/tv_9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_9"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_8"
+            app:layout_constraintTop_toBottomOf="@id/tv_6" />
+
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="@dimen/margin_16"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_7" />
+
+        <TextView
+            android:id="@+id/tv_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:onClick="onKeyboardClick"
+            android:padding="@dimen/margin_16"
+            android:text="@string/_0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/keyboard_textsize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/fl_backspace"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_empty"
+            app:layout_constraintTop_toBottomOf="@id/tv_8" />
+
+        <FrameLayout
+            android:id="@+id/fl_backspace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/tv_0"
+            app:layout_constraintTop_toBottomOf="@id/tv_9">
+
+            <TextView
+                android:id="@+id/tv_backspace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_backspace_white"
+                android:onClick="onKeyboardClick"
+                android:padding="@dimen/margin_16"
+                android:textColor="@color/white"
+                android:textSize="@dimen/keyboard_textsize"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

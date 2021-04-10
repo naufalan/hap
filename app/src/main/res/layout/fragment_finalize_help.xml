@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_finalize_help"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_back"
+                app:title="@string/kembali_ke_home"
+                app:titleTextColor="#212121" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_finalize_help"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_36"
+                android:padding="20dp"
+                android:src="@drawable/ic_pictogram"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/toolbar_finalize_help" />
+
+            <TextView
+                android:id="@+id/tv_finalize_help"
+                style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_20"
+                android:layout_marginTop="@dimen/text_16"
+                android:text="@string/butuh_bantuan"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_finalize_help" />
+
+            <TextView
+                android:id="@+id/tv_desc_finalize_help"
+                style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_8"
+                android:text="@string/desc_finalize_help"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_finalize_help" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_accept_finalize_help"
+                style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/rbk_btn_height"
+                android:layout_marginStart="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_24"
+                android:background="@drawable/selector_btn_primary"
+                android:onClick="@{clickListener}"
+                android:paddingHorizontal="@dimen/margin_16"
+                android:text="@string/telepon_kami"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@id/btn_refuse_finalize_help"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_finalize_help" />
+
+            <Button
+                android:id="@+id/btn_refuse_finalize_help"
+                style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/rbk_btn_height"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/selector_rounded_btn_transparent"
+                android:onClick="@{clickListener}"
+                android:text="@string/email_kami"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_accept_finalize_help"
+                app:layout_constraintTop_toBottomOf="@id/tv_desc_finalize_help" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

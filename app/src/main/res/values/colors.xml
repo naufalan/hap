@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5E07A0</color>
+    <color name="colorPrimaryTint">#9100FF</color>
+    <color name="colorSecondary">#5a5a5a</color>
+    <color name="colorSecondaryTint">#805a5a5a</color>
+    <color name="colorPrimaryDark">#5E07A0</color>
+    <color name="colorAccent">#5E07A0</color>
+    <color name="colorVeryDark">#333333</color>
+    <color name="colorIdleEditText">#dcdcdc</color>
+    <color name="colorIdle">#ebebeb</color>
+    <color name="colorTiming">#f8fbf3</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#C4C4C4</color>
+
+    <color name="colorBlack80">#353535</color>
+    <color name="colorButtonDisabled">#d7d5d9</color>
+
+    <color name="dotActive">#000000</color>
+    <color name="dotInactive">#d8d8d8</color>
+    <color name="colorTextLightPrimary">#555555</color>
+    <color name="colorStroke">#FFCECECE</color>
+    <color name="otp_resend">#4D000000</color>
+    <color name="colorBackgroundInfoTint">#8073abd0</color>
+    <color name="colorTextLightSecondary">#818181</color>
+    <color name="colorWhiteTint">#90FFFFFF</color>
+    <color name="black80">#CC000000</color>
+    <color name="black5">#0D000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black30">#4D000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black10">#1A000000</color>
+    <color name="colorPea">#76AC0F</color>
+    <color name="colorLightGrey">#e7e6e6</color>
+    <color name="black40">#66000000</color>
+    <color name="standardRed">#EA5F14</color>
+    <color name="standardRed10">#1AEA5F14</color>
+    <color name="standardRed20">#33EA5F14</color>
+    <color name="standardRed30">#4DEA5F14</color>
+
+    <color name="purple_200">#c98dda</color> <!--Color primary (dark)-->
+    <color name="purple_800">#5e07a0</color> <!--Color primary (light)-->
+    <color name="purple_600">#850daf</color> <!--Color primary variant (dark)-->
+    <color name="purple_900">#370494</color> <!--Color primary variant (light)-->
+
+    <color name="green_200">#bae298</color> <!--Color secondary (dark)-->
+    <color name="green_500">#6fc41f</color> <!--Color secondary variant (dark)-->
+    <color name="green_700">#49a007</color> <!--Color secondary (light)-->
+    <color name="green_900">#006a00</color> <!--Color secondary variant (light)-->
+
+    <color name="red_200">#ed8aa7</color> <!--Color error (dark)-->
+    <color name="red_800">#a00749</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <color name="black_900">#080808</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="e_commerce">#24CCB8</color>
+    <color name="lifestyle">#FFC400</color>
+    <color name="gadgets">#FF5660</color>
+    <color name="travel">#4880FF</color>
+    <color name="beauty">#7948FF</color>
+
+    <string-array name="monthly_transaction">
+        <item>#24CCB8</item>
+        <item>#FFC400</item>
+        <item>#FF5660</item>
+        <item>#4880FF</item>
+        <item>#7948FF</item>
+    </string-array>
+</resources>

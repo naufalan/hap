@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="@dimen/rbk_btn_width"
+            android:layout_height="@dimen/rbk_btn_height"
+            android:background="@drawable/selector_btn_primary"
+            android:onClick="@{clickListener}"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="@dimen/rbk_btn_width"
+            android:layout_height="@dimen/rbk_btn_height"
+            android:background="@drawable/selector_rounded_btn_transparent"
+            android:onClick="@{clickListener}"
+            android:text="@string/login"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clickable="false"
+                app:layout_constraintBottom_toTopOf="@id/ll_indicator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="-4dp"
+                android:orientation="horizontal"
+                android:paddingStart="2dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="4dp"
+                app:layout_constraintBottom_toTopOf="@id/tv_carousel_title"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_carousel_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="8sp"
+                android:lines="2"
+                android:textColor="@color/colorBlack80"
+                android:textSize="@dimen/text_24"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_carousel_desc"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Line1\nLine2" />
+
+            <TextView
+                android:id="@+id/tv_carousel_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.8"
+                android:lineSpacingExtra="8sp"
+                android:textSize="@dimen/text_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Description" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

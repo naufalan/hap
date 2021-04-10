@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_create_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_create_pin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_back" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/PaddedLayoutChangePin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/tv_title_create_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/create_pin"
+                android:textColor="@color/colorTextLightPrimary"
+                android:textSize="@dimen/text_24"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_description_create_pin"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:lineSpacingMultiplier="@dimen/linespacing_small"
+                android:text="@string/create_secure_pin_message"
+                android:textColor="@color/colorTextLightPrimary"
+                style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_create_pin" />
+
+            <com.alimuzaffar.lib.pin.PinEntryEditText
+                android:id="@+id/et_create_pin"
+                android:layout_width="196dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:background="@null"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="0dp"
+                android:paddingBottom="1dp"
+                android:textColor="@android:color/transparent"
+                android:textIsSelectable="false"
+                android:textSize="0px"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_create_pin"
+                app:pinBackgroundDrawable="@drawable/selector_pin_round_primary"
+                app:pinBackgroundIsSquare="true"
+                app:pinCharacterSpacing="10dp"
+                app:pinLineColors="@color/colorBackgroundInfoTint" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_20"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/create_pin_info"
+                android:textColor="@color/colorTextLightSecondary"
+                style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_create_pin" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_dont_have_access"
+            style="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back" />
+
+        <ImageView
+            android:id="@+id/iv_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_call_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_dont_have_access" />
+
+        <TextView
+            android:id="@+id/tv_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="28dp"
+            android:text="@string/dont_have_number_access"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_dont_have_access" />
+
+        <TextView
+            android:id="@+id/tv_desc_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/dont_have_access_desc"
+            android:textColor="@color/black80"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dont_have_access" />
+
+        <TextView
+            android:id="@+id/tv_call_centre_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/call_centre_bri"
+            android:textColor="#212121"
+            android:textSize="@dimen/text_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_dont_have_access" />
+
+        <ImageView
+            android:id="@+id/iv_call_centre_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:src="@drawable/ic_call"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_call_centre_dont_have_access" />
+
+        <TextView
+            android:id="@+id/tv_number_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:text="@string/number_call_center"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintBottom_toBottomOf="@id/iv_call_centre_dont_have_access"
+            app:layout_constraintStart_toEndOf="@id/iv_call_centre_dont_have_access"
+            app:layout_constraintTop_toTopOf="@id/iv_call_centre_dont_have_access" />
+
+        <Button
+            android:id="@+id/btn_dont_have_access"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/selector_btn_primary"
+            android:onClick="@{clickListener}"
+            android:padding="10dp"
+            android:text="@string/whatsapp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_call_centre_dont_have_access" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

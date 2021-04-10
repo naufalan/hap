@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.apply.main_form.ApplyIncomeUploadFragment">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_send_apply_income_upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_apply_income_upload"
+                    style="@style/ThemeOverlay.AppCompat.Light"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navigationIcon="@drawable/ic_back" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_title_apply_income_upload"
+                    style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:text="@string/upload_bukti_penghasilan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_apply_income_upload" />
+
+                <TextView
+                    android:id="@+id/tv_desc_apply_income_upload"
+                    style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:lineSpacingExtra="6sp"
+                    android:text="@string/desc_apply_income_upload"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_apply_income_upload" />
+
+                <TextView
+                    android:id="@+id/tv_main_apply_income_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:text="@string/dokumen_utamamu"
+                    android:textColor="@color/colorPrimary"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_apply_income_upload" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_main_apply_income_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:onClick="@{clickListener}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_main_apply_income_upload">
+
+                    <ImageView
+                        android:id="@+id/iv_main_apply_income_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_camera"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_main_uploaded_apply_income_upload"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:background="@color/black"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_apply_income_upload"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_apply_income_upload"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_main_uplaoded_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/file_berhasil_diupload"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_uploaded_apply_income_upload"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_uploaded_apply_income_upload"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_uploaded_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_title_main_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/ambil_foto_bukti_penghasilan"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_apply_income_upload"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_desc_main_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/pastikan_dokumen_jelas_dan_tidak_rusak"
+                        android:textColor="@color/black50"
+                        app:layout_constraintStart_toEndOf="@id/iv_main_apply_income_upload"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_main_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_change_apply_income_upload_1"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ubah_file"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_main_apply_income_upload"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_main_apply_income_upload" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/line_apply_income_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_24"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_main_apply_income_upload" />
+
+                <TextView
+                    android:id="@+id/tv_optional_apply_income_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:text="@string/desc_optional_apply_income_upload"
+                    android:textColor="@color/colorPrimary"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption3"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_apply_income_upload" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_optional_apply_income_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:onClick="@{clickListener}"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_optional_apply_income_upload">
+
+                    <ImageView
+                        android:id="@+id/iv_optional_apply_income_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_document"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_title_optional_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/upload_dokumen_bukti_penghasilan"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintStart_toEndOf="@id/iv_optional_apply_income_upload"
+                        app:layout_constraintTop_toTopOf="@id/iv_optional_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_desc_optional_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/dokumen_bisa_berupa_file_maupun_foto"
+                        android:textColor="@color/black50"
+                        app:layout_constraintStart_toEndOf="@id/iv_optional_apply_income_upload"
+                        app:layout_constraintTop_toBottomOf="@id/tv_title_optional_apply_income_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_change_apply_income_upload_2"
+                        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ubah_file"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_optional_apply_income_upload"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/iv_optional_apply_income_upload" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_warning_apply_income_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:background="@drawable/bg_stroke"
+                    android:padding="@dimen/margin_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_optional_apply_income_upload">
+
+                    <ImageView
+                        android:id="@+id/iv_warning_apply_income_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_ribbon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_warning_apply_income_upload"
+                        style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:text="@string/warning_apply_income_upload"
+                        android:textColor="@color/black80"
+                        android:textStyle="italic"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_warning_apply_income_upload"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_warning_apply_income_upload"
+                        app:layout_constraintTop_toTopOf="@id/iv_warning_apply_income_upload" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cb_apply_income_upload"
+                    style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_20"
+                    android:enabled="true"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/apply_form_agreement"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_warning_apply_income_upload" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btn_save_apply_income_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@drawable/selector_rounded_btn_transparent"
+            android:onClick="@{clickListener}"
+            android:padding="@dimen/margin_12"
+            android:text="@string/berhenti_and_simpan"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guide_apply_income_upload" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_apply_income_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send_apply_income_upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:background="@drawable/selector_btn_primary"
+            android:enabled="true"
+            android:onClick="@{clickListener}"
+            android:padding="@dimen/margin_12"
+            android:text="@string/kirim"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guide_apply_income_upload" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

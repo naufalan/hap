@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile_otp"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_title_profile_otp"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/verifikasi_nomor"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_profile_otp" />
+
+        <TextView
+            android:id="@+id/tv_desc_profile_otp"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/desc_profile_otp"
+            android:textColor="?android:attr/textColorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_profile_otp" />
+
+        <com.alimuzaffar.lib.pin.PinEntryEditText
+            android:id="@+id/et_profile_otp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_12"
+            android:cursorVisible="true"
+            android:digits="1234567890"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:inputType="number"
+            android:maxLength="6"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textIsSelectable="false"
+            android:textSize="@dimen/text_20"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_profile_otp"
+            app:pinBackgroundIsSquare="true"
+            app:pinCharacterSpacing="10dp"
+            app:pinLineColors="@color/colorPrimaryDark"
+            app:pinLineStroke="2dp"
+            app:pinLineStrokeSelected="3dp" />
+
+        <TextView
+            android:id="@+id/tv_not_received_profile_otp"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_40"
+            android:text="@string/otp_not_received"
+            android:textColor="@color/black50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_profile_otp" />
+
+        <TextView
+            android:id="@+id/tv_resend_profile_otp"
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/kirim_ulang"
+            android:textAllCaps="true"
+            android:textColor="@color/black30"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_not_received_profile_otp" />
+
+        <TextView
+            android:id="@+id/tv_resend_count_profile_otp"
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/_15"
+            android:textAllCaps="true"
+            android:textColor="@color/black30"
+            android:visibility="visible"
+            app:layout_constraintStart_toEndOf="@id/tv_resend_profile_otp"
+            app:layout_constraintTop_toBottomOf="@id/tv_not_received_profile_otp"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

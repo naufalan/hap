@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.apply.questionnaire.ApplyFirstFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_apply_first"
+            style="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back" />
+
+        <ImageView
+            android:id="@+id/iv_apply_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_36"
+            android:src="@drawable/ic_doc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_apply_first" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_apply_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/title_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            android:textColor="@color/black80"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_desc_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/desc_apply_first"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_order_one_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_24"
+            android:text="@string/_1."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_question_one_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_24"
+            android:text="@string/question_one_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_no_one_apply_first"
+            app:layout_constraintStart_toEndOf="@id/tv_order_one_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_apply_first" />
+
+        <Switch
+            android:id="@+id/switch_one_apply_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/tv_question_one_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_no_one_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:text="@string/tidak"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_one_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/switch_one_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_one_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_yes_one_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iya"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_one_apply_first"
+            app:layout_constraintStart_toEndOf="@id/switch_one_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_one_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_order_two_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/_2."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_one_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_question_two_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/question_two_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_no_two_apply_first"
+            app:layout_constraintStart_toEndOf="@id/tv_order_two_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_one_apply_first" />
+
+        <Switch
+            android:id="@+id/switch_two_apply_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/tv_question_one_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_one_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_no_two_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:text="@string/tidak"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_two_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/switch_two_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_two_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_yes_two_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iya"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_two_apply_first"
+            app:layout_constraintStart_toEndOf="@id/switch_two_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_two_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_order_three_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/_3."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_two_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_question_three_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/question_three_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_no_three_apply_first"
+            app:layout_constraintStart_toEndOf="@id/tv_order_three_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_two_apply_first" />
+
+        <Switch
+            android:id="@+id/switch_three_apply_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toEndOf="@id/tv_question_two_apply_first"
+            app:layout_constraintTop_toBottomOf="@id/tv_question_two_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_no_three_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:text="@string/tidak"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_three_apply_first"
+            app:layout_constraintEnd_toStartOf="@id/switch_three_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_three_apply_first" />
+
+        <TextView
+            android:id="@+id/tv_yes_three_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iya"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/switch_three_apply_first"
+            app:layout_constraintStart_toEndOf="@id/switch_three_apply_first"
+            app:layout_constraintTop_toTopOf="@id/switch_three_apply_first" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_apply_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/rbk_btn_height"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:background="@drawable/selector_btn_primary"
+            android:enabled="false"
+            android:paddingHorizontal="@dimen/margin_20"
+            android:text="@string/lanjutkan_pengajuan"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

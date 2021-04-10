@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.main.MainActivity">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/bg_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:src="@drawable/ic_icon_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_qr_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:src="@drawable/ic_qr"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_notification_home"
+                    app:layout_constraintEnd_toStartOf="@id/iv_notification_home"
+                    app:layout_constraintTop_toTopOf="@id/iv_notification_home" />
+
+                <TextView
+                    android:id="@+id/tv_notification_home"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/bg_circle_notification"
+                    android:elevation="50dp"
+                    android:text="@string/_1."
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_notification_home"
+                    app:layout_constraintEnd_toEndOf="@id/iv_notification_home"
+                    app:layout_constraintStart_toStartOf="@id/iv_notification_home"
+                    app:layout_constraintTop_toTopOf="@id/iv_notification_home" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_notification_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_notification"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/tv_title_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_36"
+                    android:text="@string/welcome"
+                    android:textColor="#F5A623"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_home" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@drawable/bg_grey_rounded_stroke"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_home">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_application_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_20"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_desc_home"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingMultiplier="1.2"
+                            android:text="@string/ajukan_seka"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_12"
+                            app:layout_constraintEnd_toStartOf="@id/iv_icon_home_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_icon_home_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:src="@drawable/ic_phone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/tv_desc_home"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_home"
+                            app:tint="@color/purple_800" />
+
+                        <Button
+                            android:id="@+id/btn_submit_kredit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:background="@drawable/selector_btn_primary"
+                            android:onClick="@{clickListener}"
+                            android:paddingHorizontal="@dimen/margin_20"
+                            android:text="@string/ajukan_limit_kredit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_14"
+                            android:textStyle="normal"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_icon_home_1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_progress_scoring_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{clickListener}"
+                        android:padding="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tunggu_sebentar"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:text="@string/desc_progress_scoring_home"
+                            android:textColor="@color/black80"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_progress_scoring_home" />
+
+                        <TextView
+                            android:id="@+id/tv_counter_minute_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:text="@string/_50"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_progress_scoring_home" />
+
+                        <TextView
+                            android:id="@+id/tv_minute_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:text="@string/menit"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_counter_minute_progress_scoring_home"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@id/tv_counter_minute_progress_scoring_home"
+                            app:layout_constraintTop_toTopOf="@id/tv_counter_minute_progress_scoring_home" />
+
+                        <TextView
+                            android:id="@+id/tv_counter_second_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:text="@string/_22"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@id/tv_minute_progress_scoring_home"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_progress_scoring_home" />
+
+                        <TextView
+                            android:id="@+id/tv_second_progress_scoring_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:alpha="0.8"
+                            android:text="@string/detik"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_counter_second_progress_scoring_home"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@id/tv_counter_second_progress_scoring_home"
+                            app:layout_constraintTop_toTopOf="@id/tv_counter_second_progress_scoring_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_email_verification_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/putusan_kredit_selesai"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:text="@string/desc_email_verification_home"
+                            android:textColor="@color/black80"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_email_verification_home" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/rbk_btn_height"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:background="@drawable/selector_btn_primary"
+                            android:enabled="true"
+                            android:onClick="@{clickListener}"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            android:text="@string/lanjutkan_pengajuan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_email_verification_home" />
+
+                        <TextView
+                            android:id="@+id/tv_counter_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="@id/btn_email_verification_home"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_email_verification_home"
+                            app:layout_constraintTop_toTopOf="@id/btn_email_verification_home" />
+
+                        <TextView
+                            android:id="@+id/tv_change_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:onClick="@{clickListener}"
+                            android:text="@string/ubah_email_underline"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintEnd_toStartOf="@id/tv_resend_email_verification_home"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btn_email_verification_home" />
+
+                        <TextView
+                            android:id="@+id/tv_resend_email_verification_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_24"
+                            android:text="@string/kirim_ulang_email_verifikasi"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_change_email_verification_home"
+                            app:layout_constraintTop_toBottomOf="@id/btn_email_verification_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_finalize_reject_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_finalize_reject_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/mohon_maaf"
+                            android:textColor="@color/black80"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_finalize_reject_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:text="@string/desc_finalize_reject_home"
+                            android:textColor="@color/black80"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_finalize_reject_home" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_finalize_reject_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/rbk_btn_height"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:background="@drawable/selector_btn_primary"
+                            android:enabled="true"
+                            android:onClick="@{clickListener}"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            android:text="@string/ajukan_limit_kredit"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_finalize_reject_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_digital_signature_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_20"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_digital_signature_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/desc_digital_signature_home"
+                            android:textColor="@color/black80"
+                            app:layout_constraintEnd_toStartOf="@id/iv_digital_signature_home"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iv_digital_signature_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_third_time_take"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_digital_signature_home"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_digital_signature_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/rbk_btn_height"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:background="@drawable/selector_btn_primary"
+                            android:enabled="true"
+                            android:onClick="@{clickListener}"
+                            android:paddingHorizontal="@dimen/margin_16"
+                            android:text="@string/lanjutkan_pengajuan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/tv_timer_digital_signature_home"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_digital_signature_home" />
+
+                        <TextView
+                            android:id="@+id/tv_timer_digital_signature_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_40"
+                            android:text="@string/example_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/btn_digital_signature_home"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_digital_signature_home"
+                            app:layout_constraintTop_toTopOf="@id/btn_digital_signature_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_available_credit_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{clickListener}"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0">
+
+                        <TextView
+                            android:id="@+id/tv_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_20"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:text="@string/kredit_tersedia"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/tv_day_remains_available_credit_home"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_day_remains_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            android:background="@drawable/bg_rounded"
+                            android:backgroundTint="#EA5F14"
+                            android:paddingHorizontal="@dimen/margin_20"
+                            android:paddingVertical="@dimen/margin_8"
+                            android:text="@string/example_day_remains"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_available_credit_home"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_available_credit_home"
+                            app:layout_constraintTop_toTopOf="@id/tv_available_credit_home" />
+
+                        <TextView
+                            android:id="@+id/tv_rp_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_20"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:text="@string/rp"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_available_credit_home" />
+
+                        <TextView
+                            android:id="@+id/tv_amount_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            android:text="@string/example_amount_money"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_rp_available_credit_home"
+                            app:layout_constraintTop_toBottomOf="@id/tv_available_credit_home" />
+
+                        <TextView
+                            android:id="@+id/tv_desc_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:layout_marginEnd="@dimen/margin_20"
+                            android:text="@string/desc_available_credit_home"
+                            android:textColor="@color/colorPrimary"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tv_rp_available_credit_home"
+                            app:layout_constraintTop_toBottomOf="@id/tv_amount_available_credit_home" />
+
+                        <ImageView
+                            android:id="@+id/iv_bottom_available_credit_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginHorizontal="2dp"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:background="@drawable/bg_grey_rounded_bottom"
+                            android:padding="@dimen/margin_20"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_desc_available_credit_home" />
+
+                        <TextView
+                            android:id="@+id/tv_note_available_credit_home"
+                            style="@style/TextAppearance.MdcTypographyStyles.Caption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/margin_20"
+                            android:text="@string/note_available_credit_home"
+                            android:textColor="@color/black80"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_bottom_available_credit_home"
+                            app:layout_constraintEnd_toEndOf="@id/iv_bottom_available_credit_home"
+                            app:layout_constraintStart_toStartOf="@id/iv_bottom_available_credit_home"
+                            app:layout_constraintTop_toTopOf="@id/iv_bottom_available_credit_home" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tv_enjoy_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:text="@string/enjoy_life"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_home" />
+
+                <TextView
+                    android:id="@+id/tv_desc_enjoy_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/desc_enjoy_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_enjoy_home" />
+
+                <ImageView
+                    android:id="@+id/iv_traveloka_home"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="15dp"
+                    android:src="@drawable/traveloka"
+                    app:layout_constraintEnd_toStartOf="@id/iv_tokopedia_home"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_enjoy_home" />
+
+                <ImageView
+                    android:id="@+id/iv_tokopedia_home"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="15dp"
+                    android:src="@drawable/tokopedia"
+                    app:layout_constraintEnd_toStartOf="@id/iv_bukalapak_home"
+                    app:layout_constraintStart_toEndOf="@id/iv_traveloka_home"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_enjoy_home" />
+
+                <ImageView
+                    android:id="@+id/iv_bukalapak_home"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="15dp"
+                    android:src="@drawable/bukalapak"
+                    app:layout_constraintEnd_toStartOf="@id/iv_lazada_home"
+                    app:layout_constraintStart_toEndOf="@id/iv_tokopedia_home"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_enjoy_home" />
+
+                <ImageView
+                    android:id="@+id/iv_lazada_home"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="15dp"
+                    android:src="@drawable/lazada"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/iv_bukalapak_home"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_enjoy_home" />
+
+                <ImageView
+                    android:id="@+id/line_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:background="@color/black5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_traveloka_home" />
+
+                <TextView
+                    android:id="@+id/tv_promo_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:text="@string/beragam_promo_menarik"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/line_home" />
+
+                <TextView
+                    android:id="@+id/tv_desc_promo_home"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_20"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_20"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/desc_promo_home"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_promo_home" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_promo_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/margin_20"
+                    android:layout_marginEnd="@dimen/margin_16"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_desc_promo_home"
+                    tools:listitem="@layout/list_promo_home" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginEnd="@dimen/margin_20">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_signup_success"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="80dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@drawable/circle_color_primary"
+            android:padding="@dimen/margin_36"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_congratulation"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_title_signup_success"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_36"
+            android:lineSpacingExtra="8dp"
+            android:lineSpacingMultiplier="0.8"
+            android:text="@string/signup_success"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_24"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_signup_success" />
+
+        <TextView
+            android:id="@+id/tv_desc_signup_success"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/congratulation_description"
+            android:textColor="@color/black"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_signup_success" />
+
+        <Button
+            android:id="@+id/btn_signup_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@drawable/selector_btn_primary"
+            android:onClick="@{clickListener}"
+            android:text="@string/asyik"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_signup_success" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

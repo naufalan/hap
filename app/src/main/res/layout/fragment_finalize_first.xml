@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_finalize_first"
+            style="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back" />
+
+        <ImageView
+            android:id="@+id/iv_finalize_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_36"
+            android:src="@drawable/ic_doc_finalization"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_finalize_first" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title_finalize_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_16"
+            android:text="@string/title_finalize_first"
+            android:textColor="@color/black80"
+            style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_finalize_first" />
+
+        <TextView
+            android:id="@+id/tv_desc_finalize_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_8"
+            android:text="@string/desc_finalize_first"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_finalize_first" />
+
+        <TextView
+            android:id="@+id/tv_one_finalize_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/rekening_autodebet"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc_finalize_first" />
+
+        <ImageView
+            android:id="@+id/iv_one_finalize_first"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:src="@drawable/circle_color_primary"
+            app:layout_constraintBottom_toBottomOf="@id/tv_one_finalize_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_one_finalize_first"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_one_finalize_first" />
+
+        <TextView
+            android:id="@+id/tv_two_finalize_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/digital_signature"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_one_finalize_first" />
+
+        <ImageView
+            android:id="@+id/iv_two_finalize_first"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:src="@drawable/circle_color_primary"
+            app:layout_constraintBottom_toBottomOf="@id/tv_two_finalize_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_two_finalize_first"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_two_finalize_first" />
+
+        <TextView
+            android:id="@+id/tv_three_finalize_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_36"
+            android:layout_marginTop="@dimen/margin_20"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/persetujuan_dokumen"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_two_finalize_first" />
+
+        <ImageView
+            android:id="@+id/iv_three_finalize_first"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="@dimen/margin_20"
+            android:src="@drawable/circle_color_primary"
+            app:layout_constraintBottom_toBottomOf="@id/tv_three_finalize_first"
+            app:layout_constraintEnd_toStartOf="@id/tv_three_finalize_first"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_three_finalize_first" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="@id/iv_three_finalize_first"
+            app:layout_constraintEnd_toEndOf="@id/iv_one_finalize_first"
+            app:layout_constraintStart_toStartOf="@id/iv_one_finalize_first"
+            app:layout_constraintTop_toTopOf="@id/iv_one_finalize_first" />
+
+        <Button
+            android:id="@+id/btn_finalize_first"
+            style="@style/TextAppearance.MdcTypographyStyles.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_btn_primary_full"
+            android:padding="@dimen/margin_12"
+            android:text="@string/siap_lanjut"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
