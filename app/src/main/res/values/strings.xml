@@ -296,7 +296,7 @@
     <string name="desc_apply_third">Verifikasi data nasabah kamu dengan memasukkan informasi di bawah ini</string>
     <string name="desc_forget_pin">Kamu salah memasukkan<![CDATA[\n]]>PIN sebanyak 3 kali</string>
     <string name="desc_home">Ajukan sekarang untuk dapatkan kemudahan berbelanja hingga 20 juta rupiah di merchant favoritmu!</string>
-    <string name="ajukan_seka">Kredit Limitmu masih nilai nol.<br>Ayo mulai pengajuan pertamamu </br><br>dengan mudah dan cepat.</br> </string>
+    <string name="ajukan_seka">Kredit Limitmu masih nilai nol.<br>Ayo mulai pengajuan pertamamu</br> <br>dengan mudah dan cepat.</br> </string>
     <string name="desc_progress_scoring_home">Kami sedang memeriksa <![CDATA[\n]]>pengajuan limit kreditmu</string>
     <string name="_50">50</string>
     <string name="_22">22</string>

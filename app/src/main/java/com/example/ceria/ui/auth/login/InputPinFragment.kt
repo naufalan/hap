@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.ceria.R
 import com.example.ceria.databinding.FragmentInputPinBinding
 
@@ -25,13 +26,24 @@ class InputPinFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.setClickListener { view ->
-            when (view.id) {
-                R.id.tv_forgot_input_pin -> {
-                    view.findNavController()
+
+        binding. apply {
+            setClickListener { view ->
+                when (view.id) {
+                    R.id.tv_forgot_input_pin -> {
+                        view.findNavController()
                             .navigate(R.id.action_inputPinFragment_to_forgetPinFragment)
+                    }
+                }
+            }
+            etInputPin.setOnPinEnteredListener {
+                fun onPinEntered(str:CharSequence) {
+                    if (str.toString() == "111111"){
+                        findNavController().navigate(R.id.action_inputPinFragment_to_homeFragment)
+                    }
                 }
             }
         }
     }
+
 }

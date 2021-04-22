@@ -3,6 +3,7 @@ package com.example.ceria.data.remote
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.ceria.data.remote.response.Item
+import com.example.ceria.data.remote.response.User
 import com.example.ceria.network.RetrofitClient
 import com.example.ceria.network.Service
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -16,16 +17,16 @@ class RemoteDataSource {
     private val compositeDisposable: CompositeDisposable = CompositeDisposable()
     private val jsonApi: Service = retrofit.create(Service::class.java)
 
-    fun getUsers(query: String): LiveData<ApiResponse<List<Item>>> {
-        val result = MutableLiveData<ApiResponse<List<Item>>>()
+    fun getUsers(query: String): LiveData<ApiResponse<List<User>>> {
+        val result = MutableLiveData<ApiResponse<List<User>>>()
         compositeDisposable.add(
             jsonApi.getUsers(query)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ data ->
                     data.let {
-                        result.value = ApiResponse.success(it.items)
-                        Timber.e(it.items.toString())
+                        result.value = ApiResponse.success(it.users)
+                        Timber.e(it.users.toString())
                     }
                 }, {
                     it.message?.let { it1 ->

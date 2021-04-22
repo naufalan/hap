@@ -75,7 +75,7 @@ class ApplyPersonalAdapter(private val list: ArrayList<Int>, private val context
                 itemView.findViewById(R.id.spinner_list_apply_personal) as androidx.appcompat.widget.AppCompatSpinner
 
         fun removeItem(position: Int) {
-            ivAdd.setImageResource(R.drawable.ic_cc_minus)
+            ivAdd.setImageResource(R.drawable.ic_cc_minus_2)
             ivAdd.setOnClickListener {
                 list.remove(list[position])
                 notifyItemRemoved(position)
@@ -84,7 +84,7 @@ class ApplyPersonalAdapter(private val list: ArrayList<Int>, private val context
         }
 
         fun addItem(position: Int) {
-            ivAdd.setImageResource(R.drawable.ic_cc_plus)
+            ivAdd.setImageResource(R.drawable.ic_cc_plus_2)
             ivAdd.setOnClickListener {
                 list.add(list[position] + 1)
                 notifyDataSetChanged()

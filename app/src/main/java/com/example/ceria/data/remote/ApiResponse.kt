@@ -1,6 +1,7 @@
 package com.example.ceria.data.remote
 
 import com.example.ceria.data.remote.StatusResponse.*
+import com.example.ceria.data.remote.response.User
 
 class ApiResponse<T>(val status: StatusResponse, val body: T, val message: String?) {
     companion object {

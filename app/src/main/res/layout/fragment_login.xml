@@ -120,6 +120,7 @@
                             android:drawableStart="@drawable/ic_hp_white"
                             android:drawablePadding="@dimen/margin_8"
                             android:hint="@string/no_handphone_terdaftar"
+
                             android:inputType="phone"
                             android:maxLength="@integer/max_length_phone_number"
                             android:paddingBottom="@dimen/margin_20"
