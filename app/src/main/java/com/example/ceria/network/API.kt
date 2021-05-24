@@ -1,7 +1,12 @@
 package com.example.ceria.network
 
 import com.example.ceria.BuildConfig
-
+import com.example.ceria.data.response.UserResponse
+import com.example.ceria.network.API.BASE_URL
+import retrofit2.Call
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
 
 
 object API {
@@ -20,4 +25,5 @@ object API {
     const val USERS = "users"
 
     //const val SIGNUP = v1 + "registrations/initiate" + APIKEY
+
 }

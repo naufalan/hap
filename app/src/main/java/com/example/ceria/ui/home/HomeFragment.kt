@@ -10,7 +10,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.ceria.R
-import com.example.ceria.data.local.entity.HomeEntity
 import com.example.ceria.databinding.DialogChangeEmailVerificationBinding
 import com.example.ceria.databinding.FragmentHomeBinding
 import com.example.ceria.util.BaseDialog
@@ -32,7 +31,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        viewModel = getViewModel { parametersOf("hammad") }
+        //viewModel = getViewModel { parametersOf("hammad") }
         return binding.root
     }
 
@@ -118,14 +117,15 @@ class HomeFragment : Fragment() {
 //                    }
 //                }
 //            })
+            /*
             var homeList = ArrayList<HomeEntity>()
-            homeList.add(HomeEntity("0", "asdklkasd", "alkdaklsk","082299028423","123456"))
-            homeList.add(HomeEntity("1", "asdklkasd", "alkdaklsk","082299028423","123456"))
-            homeList.add(HomeEntity("2", "asdklkasd", "alkdaklsk","082299028423","123456"))
+            homeList.add(HomeEntity("0", "asdklkasd", "alkdaklsk"))
+            homeList.add(HomeEntity("1", "asdklkasd", "alkdaklsk"))
+            homeList.add(HomeEntity("2", "asdklkasd", "alkdaklsk"))
 
             val adapter = HomeAdapter()
             rvPromoHome.adapter = adapter
-            adapter.submitList(homeList)
+            adapter.submitList(homeList)*/
         }
 
         requireActivity().onBackPressedDispatcher.addCallback(

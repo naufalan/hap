@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Ceria</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -270,7 +270,7 @@
     <string name="question_two_apply_first">Apakah kamu adalah <![CDATA[\n]]>nasabah BRI?</string>
     <string name="question_three_apply_first">Apakah kamu gajian <![CDATA[\n]]>melalui BRI?</string>
     <string name="desc_apply_fourth">Lengkapi seluruh data berikut<![CDATA[\n]]>sebagai syarat pengajuan</string>
-    <string name="_20_completed">20% Completed</string>
+    <string name="_20_completed" tools:ignore="StringFormatInvalid">20% Completed</string>
     <string name="example_email">ramakumbara@work.bri.co.id</string>
     <string name="s1">S1</string>
     <string name="example_address">jl. ayat</string>
@@ -517,5 +517,74 @@
         <item>Mandiri</item>
         <item>CIMB Niaga</item>
         <item>BTN</item>
+    </string-array>
+    <string-array name="edu_last">
+        <item>S3</item>
+        <item>S2</item>
+        <item>S1</item>
+        <item>SMA/SMK</item>
+        <item>SMP</item>
+        <item>SD</item>
+    </string-array>
+    <string-array name="marital_stat">
+        <item>Belum Menikah</item>
+        <item>Sudah Menikah</item>
+    </string-array>
+    <string-array name="prov">
+        <item>Jawa Barat</item>
+        <item>Jawa Timur</item>
+        <item>Sumatra Barat</item>
+        <item>DKI Jakarta</item>
+        <item>DIY Yogyakarta</item>
+    </string-array>
+    <string-array name="city">
+        <item>Bogor</item>
+        <item>Jakarta Barat</item>
+        <item>Surabaya</item>
+    </string-array>
+    <string-array name="kec">
+        <item>Bogor Barat</item>
+        <item>Tanah Abang</item>
+        <item>Kulon Progo</item>
+    </string-array>
+    <string-array name="kel">
+        <item>Pasirkuda</item>
+        <item>Pasirjaya</item>
+        <item>Ciamis</item>
+    </string-array>
+    <string-array name="berapa_lama">
+        <item>1 Bulan</item>
+        <item>3 Tahun</item>
+        <item>1 Tahun</item>
+    </string-array>
+    <string-array name="stat_home">
+        <item>KPR</item>
+        <item>Kontrak</item>
+        <item>Lunas</item>
+    </string-array>
+    <string-array name="dependents">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="relation">
+        <item>Anak</item>
+        <item>Orang Tua</item>
+        <item>Sepupu</item>
+        <item>Saudara Kandung</item>
+    </string-array>
+    <string-array name="sumber_peng">
+        <item>Gaji</item>
+    </string-array>
+    <string-array name="jenis_work">
+        <item>PNS</item>
+        <item>Pegawai</item>
+        <item>Ibu Rumah Tangga</item>
+    </string-array>
+    <string-array name="stat_work">
+        <item>Kontrak</item>
+        <item>Tetap</item>
     </string-array>
 </resources>

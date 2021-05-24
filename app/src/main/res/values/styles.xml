@@ -41,6 +41,6 @@
         <!--        <item name="android:maxHeight">40dip</item>-->
     </style>
     <style name="font">
-        @import url(\'https://fonts.googleapis.com/css2?family=Rubik:wght@300&amp;display=swap');
+        @import url(\\\'https://fonts.googleapis.com/css2?family=Rubik:wght@300&amp;display=swap');
     </style>
 </resources>

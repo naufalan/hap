@@ -1,6 +1,7 @@
 package com.example.ceria.ui.auth.signup
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.ceria.R
 import com.example.ceria.databinding.FragmentTncBinding
+import com.example.ceria.util.AuthSelector
 
 class TncFragment : Fragment(), NestedScrollView.OnScrollChangeListener {
     private lateinit var binding: FragmentTncBinding
@@ -26,7 +28,7 @@ class TncFragment : Fragment(), NestedScrollView.OnScrollChangeListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.svTnc.setOnScrollChangeListener(this)
-
+        Log.d("edPin","${arguments?.getString("phone")}")
         binding.apply {
             val webSettings = wvTnc.settings
             wvTnc.webViewClient = WebViewClient()
@@ -180,9 +182,17 @@ class TncFragment : Fragment(), NestedScrollView.OnScrollChangeListener {
                         "</div>\n"
             wvTnc.loadData(text, "text/html", "utf-8")
             btnTnc.setOnClickListener {
-                findNavController().navigate(R.id.action_tncFragment_to_homeFragment)
+//                findNavController().navigate(R.id.action_tncFragment_to_CreatePinFragment)
+                val direction =
+                    TncFragmentDirections.actionTncFragmentToCreatePinFragment(
+                        AuthSelector.SIGNUP,
+                        "${arguments?.getString("phone")}"
+                    )
+                findNavController().navigate(direction)
             }
-
+            /*btnTnc.setOnClickListener{
+                findNavController().navigate(R.id.action_tncFragment_to_OtpVerificationFragment)
+            }*/
 
             val onBackPressedCallback = object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {

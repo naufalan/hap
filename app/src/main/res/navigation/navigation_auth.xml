@@ -44,6 +44,9 @@
         android:name="com.example.ceria.ui.auth.signup.TncFragment"
         android:label="fragment_tnc"
         tools:layout="@layout/fragment_tnc">
+        <argument
+            android:name="phone"
+            app:argType="string" />
         <action
             android:id="@+id/action_tncFragment_to_signUpFragment"
             app:destination="@id/signUpFragment"
@@ -69,6 +72,14 @@
         <action
             android:id="@+id/action_tncFragment_to_OtpVerificationFragment"
             app:destination="@+id/otpVerificationFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            />
+        <action
+            android:id="@+id/action_tncFragment_to_CreatePinFragment"
+            app:destination="@+id/createPinFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
@@ -107,6 +118,10 @@
         <argument
             android:name="auth"
             app:argType="com.example.ceria.util.AuthSelector" />
+        <argument
+            android:name="phone"
+            android:defaultValue="081"
+            app:argType="string" />
         <action
             android:id="@+id/action_createPinFragment_to_signUpSuccessFragment"
             app:destination="@id/signUpSuccessFragment"
@@ -186,6 +201,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             />
+            <argument
+                android:name="username"
+                app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/forgetPinFragment"

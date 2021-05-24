@@ -34,6 +34,54 @@ class ApplyPersonalAdapter(private val list: ArrayList<Int>, private val context
                     R.layout.support_simple_spinner_dropdown_item,
                     context.resources.getStringArray(R.array.credit_card)
             )
+            val spinnerAdapter2 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.edu_last)
+                )
+            val spinnerAdapter3 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.marital_stat)
+            )
+            val spinnerAdapter4 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.prov)
+            )
+            val spinnerAdapter5 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.city)
+            )
+            val spinnerAdapter6 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.kec)
+            )
+            val spinnerAdapter7 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.kel)
+            )
+            val spinnerAdapter8 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.stat_home)
+            )
+            val spinnerAdapter9 = ArrayAdapter<String>(
+                    context,
+                    R.layout.support_simple_spinner_dropdown_item,
+                    context.resources.getStringArray(R.array.berapa_lama)
+            )
+            spinner.adapter = spinnerAdapter2
+            spinner.adapter = spinnerAdapter3
+            spinner.adapter = spinnerAdapter4
+            spinner.adapter = spinnerAdapter5
+            spinner.adapter = spinnerAdapter6
+            spinner.adapter = spinnerAdapter7
+            spinner.adapter = spinnerAdapter8
+            spinner.adapter = spinnerAdapter9
             spinner.adapter = spinnerAdapter
 //            spinner.onItemSelectedListener = spinnerSelectedListener
             if (list.size == 1) {
@@ -79,7 +127,7 @@ class ApplyPersonalAdapter(private val list: ArrayList<Int>, private val context
             ivAdd.setOnClickListener {
                 list.remove(list[position])
                 notifyItemRemoved(position)
-                notifyItemRangeChanged(position, list.size);
+                notifyItemRangeChanged(position, list.size)
             }
         }
 

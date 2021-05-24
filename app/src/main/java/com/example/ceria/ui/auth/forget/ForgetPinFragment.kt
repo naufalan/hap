@@ -15,11 +15,6 @@ class ForgetPinFragment : Fragment() {
     private lateinit var binding: FragmentForgetPinBinding
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

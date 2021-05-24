@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
@@ -76,15 +77,21 @@ class SignUpFragment : Fragment() {
             setClickListener {
                 when (it.id) {
                     R.id.cb_tnc_signup -> {
-                        Timber.e("isChecked : $isChecked")
-                        if (isChecked) {
-                            it.findNavController()
-                                .navigate(R.id.action_signUpFragment_to_tncFragment)
-                        }
+//                        Timber.e("isChecked : $isChecked")
+//                        if (isChecked) {
+//                            it.findNavController()
+//                                .navigate(R.id.action_signUpFragment_to_tncFragment)
+//                        }
                     }
 
                     R.id.btn_login -> {
                         it.findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+                    }
+
+                    R.id.btn_signup -> {
+                        var phone_num:String = etPhoneNumberSignup.text.toString()
+                        val bundle = bundleOf("phone" to phone_num)
+                        it.findNavController().navigate(R.id.action_signUpFragment_to_tncFragment,bundle)
                     }
                 }
             }

@@ -1,17 +1,27 @@
 package com.example.ceria.ui.auth.signup
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.ceria.BuildConfig
 import com.example.ceria.R
 import com.example.ceria.databinding.DialogChangePinSuccessBinding
 import com.example.ceria.databinding.FragmentCreatePinBinding
+import com.example.ceria.network.Service
 import com.example.ceria.util.AuthSelector
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONObject
+import retrofit2.Retrofit
 
 
 class CreatePinFragment : Fragment() {
@@ -29,6 +39,8 @@ class CreatePinFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val auth = args.auth
+        val phone = args.phone
+        Log.d("edPin","${phone}")
         var isConfirmation = false
         binding.apply {
             if (auth == AuthSelector.SIGNUP) {
@@ -43,7 +55,9 @@ class CreatePinFragment : Fragment() {
                 if (it.length == 6) {
                     if (isConfirmation) {
                         if (auth == AuthSelector.SIGNUP) {
-                            findNavController().navigate(R.id.action_createPinFragment_to_signUpSuccessFragment)
+                            Log.d("edPin","${phone} ${it}")
+                            process_register(phone,it.toString())
+//                            findNavController().navigate(R.id.action_createPinFragment_to_signUpSuccessFragment)
                         } else if (auth == AuthSelector.FORGET) {
                             val dialogView = DialogChangePinSuccessBinding.inflate(
                                 LayoutInflater.from(requireContext()), null, false
@@ -66,4 +80,43 @@ class CreatePinFragment : Fragment() {
             }
         }
     }
+
+    fun process_register(phone:String,pin:String) {
+        // Create Retrofit
+        val retrofit = Retrofit.Builder()
+            .baseUrl(BuildConfig.BASE_URL+"/auth/login/")
+            .build()
+        // Create Service
+        val service = retrofit.create(Service::class.java)
+        // Create HashMap with fields
+        val params = HashMap<String?, String?>()
+        params["phone_number"] = phone
+        params["pin"] = pin
+
+        CoroutineScope(Dispatchers.IO).launch {
+            // Do the POST request and get response
+            val response = service.userRegister(params)
+
+            withContext(Dispatchers.Main) {
+                if (response.isSuccessful) {
+
+                    val jresponse = JSONObject(response.body()?.string())
+                    val status = jresponse.getString("success")
+                    val message = jresponse.getString("message")
+
+                    Log.d("retrofitReq", "${status} ${message}")
+
+                    if(status.equals("true")){
+                        Toast.makeText(activity,"${message}", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_createPinFragment_to_signUpSuccessFragment)
+                    }else{
+                        Toast.makeText(activity,"${message}", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Log.e("retrofitReq", "${response.raw().request().url()}")
+                }
+            }
+        }
+    }
+
 }
