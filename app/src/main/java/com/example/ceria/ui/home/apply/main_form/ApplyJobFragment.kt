@@ -100,7 +100,15 @@ class ApplyJobFragment : Fragment() {
                             this?.putBoolean("isJobDataFilled", true)
                             this?.apply()
                         }
-                        
+                        process_work(arguments?.getString("users_id").toString(),
+                                npwp = etNpwpApplyJob.toString(),
+                                inc = spinnerAdapter12.toString(),
+                                inc_net = etNetApplyJob.toString(),
+                                work = spinnerAdapter13.toString(),
+                                work_pl = etCompanyApplyJob.toString(),
+                                work_stat = spinnerAdapter14.toString(),
+                                work_start = tvStartApplyJob.toString(),
+                                work_end = tvEndApplyJob.toString())
                         view.findNavController()
                                 .navigate(R.id.action_applyJobFragment_to_applyFourthFragment)
                     }
@@ -110,26 +118,28 @@ class ApplyJobFragment : Fragment() {
         }
 
     }
-    /*fun process_work(npwp:String,inc:String,inc_net:String,work:String,work_pl:String,work_stat:String,work_start:String,work_end:String) {
+    fun process_work(users_id:String,npwp:String,inc:String,inc_net:String,work:String,work_pl:String,work_stat:String,work_start:String,work_end:String) {
         // Create Retrofit
         val retrofit = Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL+"/user/relative/")
+                .baseUrl(BuildConfig.BASE_URL+"/user/work/")
                 .build()
         // Create Service
         val service = retrofit.create(Service::class.java)
         // Create HashMap with fields
         val params = HashMap<String?, String?>()
-        params["maiden_name"] = ma_name
-        params["dependents"] = depend
-        params["relative"] = relate
-        params["relation"] = relate2
-        params["phone_relative"] = phone_r
-        params["address_relative"] = add_r
-        params["zipcode_num"] = zip_num
+        params["users_id"] = users_id
+        params["npwp_num"] = npwp
+        params["income"] = inc
+        params["income_net"] = inc_net
+        params["work"] = work
+        params["work_place"] = work_pl
+        params["work_status"] = work_stat
+        params["work_start"] = work_start
+        params["work_end"] = work_end
 
         CoroutineScope(Dispatchers.IO).launch {
             // Do the POST request and get response
-            val response = service.userRelative(params)
+            val response = service.userWork(params)
 
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
@@ -141,7 +151,7 @@ class ApplyJobFragment : Fragment() {
                     Log.d("retrofitReq", "${status} ${message}")
 
                     if(status.equals("true")){
-                        findNavController().navigate(R.id.action_applyFamilyFragment_to_applyFourthFragment)
+                        findNavController().navigate(R.id.action_applyJobFragment_to_applyFourthFragment)
                     }else{
                         Toast.makeText(activity,"${message}", Toast.LENGTH_SHORT).show()
                     }
@@ -151,7 +161,7 @@ class ApplyJobFragment : Fragment() {
                 }
             }
         }
-    }*/
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

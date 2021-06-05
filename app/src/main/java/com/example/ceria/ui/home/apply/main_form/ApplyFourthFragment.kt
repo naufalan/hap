@@ -258,4 +258,5 @@ class ApplyFourthFragment : Fragment() {
         applicationSubmittedDialog.setView(dialogView)
         applicationSubmittedDialog.show()
     }
+
 }

@@ -71,5 +71,6 @@
 
 
     <include app:graph="@navigation/navigation_finalize" />
+    <include app:graph="@navigation/navigation_profile" />
 
 </navigation>

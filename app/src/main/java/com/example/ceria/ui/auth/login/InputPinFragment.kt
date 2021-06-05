@@ -130,18 +130,15 @@ class InputPinFragment : Fragment() {
         val params = HashMap<String?, String?>()
         params["phone_number"] = phone
         params["pin"] = pin
-
         CoroutineScope(Dispatchers.IO).launch {
             // Do the POST request and get response
             val response = service.userLogin(params)
-
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
 
                     val jresponse = JSONObject(response.body()?.string())
                     val status = jresponse.getString("success")
                     val message = jresponse.getString("message")
-
                     Log.d("retrofitReq", "${status} ${message}")
 
                     if(status.equals("true")){
